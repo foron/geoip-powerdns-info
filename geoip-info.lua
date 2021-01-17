@@ -126,6 +126,6 @@ function preresolve(dq)
     end
   end
 
-	dq.rcode = pdns.NXDOMAIN
-	return true
+  dq.rcode = pdns.NXDOMAIN
+  return true
 end
