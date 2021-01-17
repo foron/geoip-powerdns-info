@@ -1,5 +1,5 @@
 # geoip-powerdns-info
-Return GeoIP data with an RBL-like interface using PowerDNS Recursor
+Return GeoIP data with a RBL-like interface using PowerDNS Recursor
 
 This simple project uses [PowerDNS Recursor](https://doc.powerdns.com/recursor/) to return GeoIP information of any given IP (IPv4) address.
 
@@ -9,7 +9,7 @@ The idea is taken from the [rspamd](https://rspamd.com/) asn module. This module
 
 ## Installation
 
-This library returns NXDOMAIN for any queries that are not subdomains of the configured RBL domain. You should consider to use a dedicated PowerDNS Recursor instance for this RBL service. 
+This library returns NXDOMAIN for any queries that are not subdomains of the configured RBL domain. You should consider using a dedicated PowerDNS Recursor instance for this RBL service. 
 
 Even if you could change the code to allow both general and RBL queries, I prefer to isolate both instances and to use [dnsdist](https://dnsdist.org/) to route queries.
 
@@ -33,7 +33,7 @@ I would recommend to download recent PowerDNS software from the [official repo](
 
 If you choose to run virtual instances, follow the [powerdns-auth guide](https://doc.powerdns.com/authoritative/guides/virtual-instances.html), as it also works with the recursor, even if it's not documented.
 
-Adapt the configuration to your environment. You'll probably have to change `local-address` and `local-port` (127.0.0.1 and 5353 in this example).
+Adapt the configuration to your environment. You'll probably want to change `local-address` and `local-port` (127.0.0.1 and 5353 in this example).
 
 PowerDNS recursor should read the LUA file:
 
@@ -56,7 +56,7 @@ The LUA script expects to find these files at:
   /usr/local/GeoLite2-ASN.mmdb
 ```
 
-Feel free to change them to suit your needs.
+Feel free to change the path to suit your needs.
 
 ### LUA libraries
 
